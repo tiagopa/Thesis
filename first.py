@@ -152,20 +152,30 @@ if __name__ == '__main__':
 	n4 = graph.add_node('Avenida Manuel da Maia')
 	n5 = graph.add_node('Praça de Londres')
 	n6 = graph.add_node('Avenida Guerra Junqueiro')
-	n7 = graph.add_node('Avenida de António José de Almeida')
+	n7 = graph.add_node('Avenida de António José de Almeida') # SPECIAL CASE: rotunda a meio da avenida!!!
 	n8 = graph.add_node('Avenida do México')
 	n9 = graph.add_node('Avenida Almirante Reis')
 	n10 = graph.add_node('Avenida de Paris')
 
 	n11 = graph.add_node('Rotunda')
 
-	n12 = graph.add_node('Rua Alves Redol')
+	n12 = graph.add_node('Rua Alves Redol') # SPECIAL CASE: rotunda a meio da avenida!!!
 	n13 = graph.add_node('Avenida João Crisóstomo')
 	n14 = graph.add_node('Avenida Rovisco Pais')
+	n15 = graph.add_node('Largo Mendonça e Costa')
+	n16 = graph.add_node('Rua Morais Soares')
+	n17 = graph.add_node('Rua António Pereira Carrilho')
+	n18 = graph.add_node('Largo do Leão')
+	n19 = graph.add_node('Rua Visconde de Santarém')
+	n20 = graph.add_node('Avenida Duque de Ávila')
+	n21 = graph.add_node('Rua Bacelar e Silva')
 
 
 	# ADD CONNECTIONS BETWEEN STREETS
 	n0.ConnectsTo(n1)
+	n0.ConnectsTo(n15)
+	n15.ConnectsTo(n3)
+	n3.ConnectsTo(n15)
 	n1.ConnectsTo(n3)
 	n2.ConnectsTo(n0)
 	n3.ConnectsTo(n2)
@@ -194,6 +204,31 @@ if __name__ == '__main__':
 	n12.ConnectsTo(n13)
 	n12.ConnectsTo(n14)
 	n14.ConnectsTo(n4)
+	n9.ConnectsTo(n16)
+	n16.ConnectsTo(n9)
+	n16.ConnectsTo(n3)
+	n9.ConnectsTo(n17)
+	n17.ConnectsTo(n9)
+	n18.ConnectsTo(n4)
+	n4.ConnectsTo(n18)
+	n18.ConnectsTo(n17)
+	n17.ConnectsTo(n18)
+	n18.ConnectsTo(n19)
+	n19.ConnectsTo(n18)
+	n19.ConnectsTo(n14)
+	n12.ConnectsTo(n19)
+	n19.ConnectsTo(n12)
+	n20.ConnectsTo(n12)
+	n20.ConnectsTo(n19)
+	n20.ConnectsTo(n14)
+	n11.ConnectsTo(n21)
+
+
+
+
+
+
+
 
 
 	# ADD STREET INFORMATIONS
