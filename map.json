@@ -29,6 +29,7 @@
                 "info_type" : "point",
                 "orientation" : "North",
                 "coordinates" : [38.736609, -9.137959],
+                "radius" : 10,
                 "missed" : 0
             },
             {
@@ -36,6 +37,7 @@
                 "info_type" : "sign",
                 "orientation" : "North",
                 "coordinates" : [38.736303, -9.137981],
+                "radius" : 10,
                 "missed" : 0
             },
             {
@@ -43,6 +45,7 @@
                 "info_type" : "sign",
                 "orientation" : "North",
                 "coordinates" : [38.735747, -9.137813],
+                "radius" : 10,
                 "missed" : 0
             },
             {
@@ -50,6 +53,7 @@
                 "info_type" : "sign",
                 "orientation" : "North",
                 "coordinates" : [38.735665, -9.137805],
+                "radius" : 10,
                 "missed" : 0
             },
             {
@@ -57,6 +61,7 @@
                 "info_type" : "sign",
                 "orientation" : "East",
                 "coordinates" : [38.735759, -9.137921],
+                "radius" : 10,
                 "missed" : 0
             },
             {
@@ -64,6 +69,7 @@
                 "info_type" : "point",
                 "orientation" : "East",
                 "coordinates" : [38.735588, -9.138736],
+                "radius" : 10,
                 "missed" : 0
             },
             {
@@ -71,6 +77,7 @@
                 "info_type" : "point",
                 "orientation" : "South",
                 "coordinates" : [38.735632, -9.138837],
+                "radius" : 10,
                 "missed" : 0
             },
             {
@@ -78,6 +85,7 @@
                 "info_type" : "sign",
                 "orientation" : "South",
                 "coordinates" : [38.735741, -9.138967],
+                "radius" : 10,
                 "missed" : 0
             },
             {
@@ -85,6 +93,7 @@
                 "info_type" : "sign",
                 "orientation" : "South",
                 "coordinates" : [38.736044, -9.138887],
+                "radius" : 10,
                 "missed" : 0
             },
             {
@@ -92,6 +101,7 @@
                 "info_type" : "sign",
                 "orientation" : "South",
                 "coordinates" : [38.736050, -9.138998],
+                "radius" : 10,
                 "missed" : 0
             },
             {
@@ -99,6 +109,7 @@
                 "info_type" : "sign",
                 "orientation" : "South",
                 "coordinates" : [38.736192, -9.138999],
+                "radius" : 10,
                 "missed" : 0
             },
             {
@@ -106,6 +117,7 @@
                 "info_type" : "sign",
                 "orientation" : "South",
                 "coordinates" : [38.736311, -9.139008],
+                "radius" : 10,
                 "missed" : 0
             },
             {
@@ -113,6 +125,7 @@
                 "info_type" : "road mark",
                 "orientation" : "South",
                 "coordinates" : [38.736775, -9.138851],
+                "radius" : 10,
                 "missed" : 0
             },
             {
@@ -120,6 +133,7 @@
                 "info_type" : "sign",
                 "orientation" : "South",
                 "coordinates" : [38.736929, -9.138990],
+                "radius" : 10,
                 "missed" : 0
             },
             {
@@ -127,6 +141,7 @@
                 "info_type" : "sign",
                 "orientation" : "South",
                 "coordinates" : [38.736965, -9.139067],
+                "radius" : 10,
                 "missed" : 0
             },
             {
@@ -134,6 +149,7 @@
                 "info_type" : "sign",
                 "orientation" : "South",
                 "coordinates" : [38.737090, -9.139078],
+                "radius" : 10,
                 "missed" : 0
             },
             {
@@ -141,6 +157,7 @@
                 "info_type" : "intersection",
                 "orientation" : "South",
                 "coordinates" : [38.737317, -9.139107],
+                "radius" : 10,
                 "missed" : null
             },
             {
@@ -148,6 +165,7 @@
                 "info_type" : "sign",
                 "orientation" : "South",
                 "coordinates" : [38.737208, -9.139096],
+                "radius" : 10,
                 "missed" : 0
             },
             {
@@ -155,6 +173,7 @@
                 "info_type" : "sign",
                 "orientation" : "South",
                 "coordinates" : [38.737317, -9.139107],
+                "radius" : 10,
                 "missed" : 0
             },
             {
@@ -162,6 +181,7 @@
                 "info_type" : "sign",
                 "orientation" : "South",
                 "coordinates" : [38.737504, -9.139134],
+                "radius" : 10,
                 "missed" : 0
             },
             {
@@ -169,6 +189,7 @@
                 "info_type" : "sign",
                 "orientation" : "South",
                 "coordinates" : [38.737640, -9.139059],
+                "radius" : 10,
                 "missed" : 0
             },
             {
@@ -176,6 +197,7 @@
                 "info_type" : "sign",
                 "orientation" : "South",
                 "coordinates" : [38.737782, -9.139154],
+                "radius" : 10,
                 "missed" : 0
             },
             {
@@ -183,6 +205,7 @@
                 "info_type" : "sign",
                 "orientation" : "South",
                 "coordinates" : [38.737893, -9.139069],
+                "radius" : 10,
                 "missed" : 0
             },
             {
@@ -190,6 +213,7 @@
                 "info_type" : "point",
                 "orientation" : "West",
                 "coordinates" : [38.737948, -9.138960],
+                "radius" : 10,
                 "missed" : 0
             },
             {
@@ -197,6 +221,7 @@
                 "info_type" : "point",
                 "orientation" : "West",
                 "coordinates" : [38.737964, -9.138150],
+                "radius" : 10,
                 "missed" : 0
             },
             {
@@ -204,6 +229,7 @@
                 "info_type" : "point",
                 "orientation" : "North",
                 "coordinates" : [38.737874, -9.138091],
+                "radius" : 10,
                 "missed" : 0
             },
             {
@@ -211,6 +237,7 @@
                 "info_type" : "road mark",
                 "orientation" : "North",
                 "coordinates" : [38.737617, -9.138069],
+                "radius" : 10,
                 "missed" : 0
             },
             {
@@ -218,6 +245,7 @@
                 "info_type" : "point",
                 "orientation" : "North",
                 "coordinates" : [38.737047, -9.138001],
+                "radius" : 10,
                 "missed" : 0
             }
         ],
@@ -227,6 +255,7 @@
                 "info_type" : "point",
                 "orientation" : "South",
                 "coordinates" : [38.737047, -9.138001],
+                "radius" : 10,
                 "missed" : 0
             },
             {
@@ -234,6 +263,7 @@
                 "info_type" : "road mark",
                 "orientation" : "South",
                 "coordinates" : [38.737617, -9.138069],
+                "radius" : 10,
                 "missed" : 0
             },
             {
@@ -241,6 +271,7 @@
                 "info_type" : "point",
                 "orientation" : "South",
                 "coordinates" : [38.737874, -9.138091],
+                "radius" : 10,
                 "missed" : 0
             },
             {
@@ -248,6 +279,7 @@
                 "info_type" : "sign",
                 "orientation" : "East",
                 "coordinates" : [38.737882, -9.138137],
+                "radius" : 10,
                 "missed" : 0
             },
             {
@@ -255,6 +287,7 @@
                 "info_type" : "point",
                 "orientation" : "East",
                 "coordinates" : [38.737948, -9.138960],
+                "radius" : 10,
                 "missed" : 0
             },
             {
@@ -262,6 +295,7 @@
                 "info_type" : "point",
                 "orientation" : "North",
                 "coordinates" : [38.737893, -9.139069],
+                "radius" : 10,
                 "missed" : 0
             },
             {
@@ -269,13 +303,23 @@
                 "info_type" : "sign",
                 "orientation" : "North",
                 "coordinates" : [38.737493, -9.139015],
+                "radius" : 10,
                 "missed" : 0
+            },
+            {
+                "info" : "Left intersection",
+                "info_type" : "intersection",
+                "orientation" : "North",
+                "coordinates" : [38.737319, -9.139008],
+                "radius" : 10,
+                "missed" : null
             },
             {
                 "info" : "End of reserved parking",
                 "info_type" : "sign",
                 "orientation" : "North",
                 "coordinates" : [38.737090, -9.139078],
+                "radius" : 15,
                 "missed" : 0
             },
             {
@@ -283,6 +327,7 @@
                 "info_type" : "sign",
                 "orientation" : "North",
                 "coordinates" : [38.736965, -9.139067],
+                "radius" : 20,
                 "missed" : 0
             },
             {
@@ -290,6 +335,7 @@
                 "info_type" : "road mark",
                 "orientation" : "North",
                 "coordinates" : [38.736775, -9.138851],
+                "radius" : 10,
                 "missed" : 0
             },
             {
@@ -297,6 +343,7 @@
                 "info_type" : "sign",
                 "orientation" : "North",
                 "coordinates" : [38.736599, -9.138961],
+                "radius" : 20,
                 "missed" : 0
             },
             {
@@ -304,6 +351,7 @@
                 "info_type" : "sign",
                 "orientation" : "North",
                 "coordinates" : [38.736311, -9.139008],
+                "radius" : 10,
                 "missed" : 0
             },
             {
@@ -311,6 +359,7 @@
                 "info_type" : "sign",
                 "orientation" : "North",
                 "coordinates" : [38.736192, -9.138999],
+                "radius" : 10,
                 "missed" : 0
             },
             {
@@ -318,6 +367,7 @@
                 "info_type" : "sign",
                 "orientation" : "North",
                 "coordinates" : [38.735900, -9.138864],
+                "radius" : 10,
                 "missed" : 0
             },
             {
@@ -325,6 +375,7 @@
                 "info_type" : "sign",
                 "orientation" : "North",
                 "coordinates" : [38.735632, -9.138837],
+                "radius" : 10,
                 "missed" : 0
             },
             {
@@ -332,6 +383,7 @@
                 "info_type" : "point",
                 "orientation" : "West",
                 "coordinates" : [38.735588, -9.138736],
+                "radius" : 10,
                 "missed" : 0
             },
             {
@@ -339,6 +391,7 @@
                 "info_type" : "point",
                 "orientation" : "West",
                 "coordinates" : [38.735758, -9.137915],
+                "radius" : 10,
                 "missed" : 0
             },
             {
@@ -346,6 +399,7 @@
                 "info_type" : "sign",
                 "orientation" : "South",
                 "coordinates" : [38.735665, -9.137805],
+                "radius" : 10,
                 "missed" : 0
             },
             {
@@ -353,6 +407,7 @@
                 "info_type" : "sign",
                 "orientation" : "South",
                 "coordinates" : [38.735747, -9.137813],
+                "radius" : 10,
                 "missed" : 0
             },
             {
@@ -360,6 +415,7 @@
                 "info_type" : "sign",
                 "orientation" : "South",
                 "coordinates" : [38.736303, -9.137981],
+                "radius" : 10,
                 "missed" : 0
             },
             {
@@ -367,6 +423,7 @@
                 "info_type" : "sign",
                 "orientation" : "South",
                 "coordinates" : [38.736303, -9.137981],
+                "radius" : 10,
                 "missed" : 0
             },
             {
@@ -374,6 +431,7 @@
                 "info_type" : "sign",
                 "orientation" : "South",
                 "coordinates" : [38.736541, -9.138014],
+                "radius" : 10,
                 "missed" : 0
             },
             {
@@ -381,6 +439,7 @@
                 "info_type" : "point",
                 "orientation" : "South",
                 "coordinates" : [38.736609, -9.137959],
+                "radius" : 10,
                 "missed" : 0
             }
         ]
@@ -409,6 +468,7 @@
                 "info_type" : "sign",
                 "orientation" : "West",
                 "coordinates" : [38.737282, -9.139652],
+                "radius" : 10,
                 "missed" : 0
             },
             {
@@ -416,6 +476,7 @@
                 "info_type" : "sign",
                 "orientation" : "West",
                 "coordinates" : [38.737177, -9.139652],
+                "radius" : 10,
                 "missed" : 0
             },
             {
@@ -423,6 +484,7 @@
                 "info_type" : "sign",
                 "orientation" : "West",
                 "coordinates" : [38.737208, -9.139096],
+                "radius" : 10,
                 "missed" : 0
             },
             {
@@ -430,6 +492,7 @@
                 "info_type" : "sign",
                 "orientation" : "West",
                 "coordinates" : [38.737317, -9.139107],
+                "radius" : 10,
                 "missed" : 0
             }
         ],
@@ -460,6 +523,7 @@
                 "info_type" : "sign",
                 "orientation" : "East",
                 "coordinates" : [38.736201, -9.139005],
+                "radius" : 10,
                 "missed" : 0
             },
             {
@@ -467,6 +531,7 @@
                 "info_type" : "point",
                 "orientation" : "East",
                 "coordinates" : [38.736214, -9.139597],
+                "radius" : 10,
                 "missed" : 0
             }
         ],
@@ -500,6 +565,7 @@
                 "info_type" : "sign",
                 "orientation" : "South",
                 "coordinates" : [38.736143, -9.139583],
+                "radius" : 10,
                 "missed" : 0
             },
             {
@@ -507,6 +573,7 @@
                 "info_type" : "sign",
                 "orientation" : "South",
                 "coordinates" : [38.736263, -9.139810],
+                "radius" : 10,
                 "missed" : 0
             },
             {
@@ -514,6 +581,7 @@
                 "info_type" : "sign",
                 "orientation" : "South",
                 "coordinates" : [38.736831, -9.139736],
+                "radius" : 10,
                 "missed" : 0
             },
             {
@@ -521,6 +589,7 @@
                 "info_type" : "sign",
                 "orientation" : "South",
                 "coordinates" : [38.736893, -9.139694],
+                "radius" : 10,
                 "missed" : 0
             },
             {
@@ -528,6 +597,7 @@
                 "info_type" : "sign",
                 "orientation" : "South",
                 "coordinates" : [38.737110, -9.139685],
+                "radius" : 10,
                 "missed" : 0
             }
         ],
@@ -555,6 +625,7 @@
                 "info_type" : "sign",
                 "orientation" : "South",
                 "coordinates" : [38.737288, -9.139697],
+                "radius" : 10,
                 "missed" : 0
             },
             {
@@ -562,6 +633,7 @@
                 "info_type" : "sign",
                 "orientation" : "South",
                 "coordinates" : [38.737175, -9.139682],
+                "radius" : 10,
                 "missed" : 0
             },
             {
@@ -569,6 +641,7 @@
                 "info_type" : "sign",
                 "orientation" : "South",
                 "coordinates" : [38.737335, -9.139882],
+                "radius" : 10,
                 "missed" : 0
             },
             {
@@ -576,6 +649,7 @@
                 "info_type" : "point",
                 "orientation" : "South",
                 "coordinates" : [38.737871, -9.139864],
+                "radius" : 10,
                 "missed" : 0
             },
             {
@@ -583,6 +657,7 @@
                 "info_type" : "point",
                 "orientation" : "East",
                 "coordinates" : [38.737957, -9.139994],
+                "radius" : 10,
                 "missed" : 0
             },
             {
@@ -590,6 +665,7 @@
                 "info_type" : "point",
                 "orientation" : "East",
                 "coordinates" : [38.737707, -9.140596],
+                "radius" : 10,
                 "missed" : 0
             }
         ],
@@ -599,6 +675,7 @@
                 "info_type" : "sign",
                 "orientation" : "West",
                 "coordinates" : [38.737707, -9.140596],
+                "radius" : 10,
                 "missed" : 0
             },
             {
@@ -606,6 +683,7 @@
                 "info_type" : "sign",
                 "orientation" : "West",
                 "coordinates" : [38.737957, -9.139994],
+                "radius" : 10,
                 "missed" : 0
             },
             {
@@ -613,6 +691,7 @@
                 "info_type" : "sign",
                 "orientation" : "North",
                 "coordinates" : [38.737871, -9.139864],
+                "radius" : 10,
                 "missed" : 0
             },
             {
@@ -620,6 +699,7 @@
                 "info_type" : "sign",
                 "orientation" : "North",
                 "coordinates" : [38.737877, -9.139870],
+                "radius" : 10,
                 "missed" : 0
             },
             {
@@ -627,6 +707,7 @@
                 "info_type" : "sign",
                 "orientation" : "North",
                 "coordinates" : [38.737735, -9.139750],
+                "radius" : 10,
                 "missed" : 0
             },
             {
@@ -634,6 +715,7 @@
                 "info_type" : "point",
                 "orientation" : "North",
                 "coordinates" : [38.737287, -9.139774],
+                "radius" : 10,
                 "missed" : 0
             }
         ]
@@ -659,6 +741,7 @@
                 "info_type" : "sign",
                 "orientation" : "North",
                 "coordinates" : [38.736279, -9.139596],
+                "radius" : 10,
                 "missed" : 0
             },
             {
@@ -666,6 +749,7 @@
                 "info_type" : "sign",
                 "orientation" : "North",
                 "coordinates" : [38.736153, -9.139581],
+                "radius" : 10,
                 "missed" : 0
             },
             {
@@ -673,6 +757,7 @@
                 "info_type" : "sign",
                 "orientation" : "North",
                 "coordinates" : [38.736153, -9.139581],
+                "radius" : 10,
                 "missed" : 0
             },
             {
@@ -680,6 +765,7 @@
                 "info_type" : "point",
                 "orientation" : "North",
                 "coordinates" : [38.735786, -9.139600],
+                "radius" : 10,
                 "missed" : 0
             },
             {
@@ -687,6 +773,7 @@
                 "info_type" : "point",
                 "orientation" : "South",
                 "coordinates" : [38.735800, -9.139730],
+                "radius" : 10,
                 "missed" : 0
             },
             {
@@ -694,6 +781,7 @@
                 "info_type" : "point",
                 "orientation" : "South",
                 "coordinates" : [38.736166, -9.139761],
+                "radius" : 10,
                 "missed" : 0
             }
         ],

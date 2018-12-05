@@ -27,9 +27,9 @@ def create_map():
 		k=0
 		for informations in streets["streets"][j]["infos1"]: # loop on street informations 1 
 			if k != 0:
-				exec("%s.insert(m.InfoNode('%s','%s','%s',%s))" % ((streets["streets"][j]["street_name"]+'_1'),streets["streets"][j]["infos1"][k]["info"],streets["streets"][j]["infos1"][k]["info_type"],streets["streets"][j]["infos1"][k]["orientation"],streets["streets"][j]["infos1"][k]["coordinates"])) # add elements to the list
+				exec("%s.insert(m.InfoNode('%s','%s','%s',%s,%s))" % ((streets["streets"][j]["street_name"]+'_1'),streets["streets"][j]["infos1"][k]["info"],streets["streets"][j]["infos1"][k]["info_type"],streets["streets"][j]["infos1"][k]["orientation"],streets["streets"][j]["infos1"][k]["coordinates"],streets["streets"][j]["infos1"][k]["radius"])) # add elements to the list
 			else:
-				exec("%s = m.LinkedList(m.InfoNode('%s','%s','%s',%s))" % ((streets["streets"][j]["street_name"]+'_1'),streets["streets"][j]["infos1"][k]["info"],streets["streets"][j]["infos1"][k]["info_type"],streets["streets"][j]["infos1"][k]["orientation"],streets["streets"][j]["infos1"][k]["coordinates"])) # create linked list
+				exec("%s = m.LinkedList(m.InfoNode('%s','%s','%s',%s,%s))" % ((streets["streets"][j]["street_name"]+'_1'),streets["streets"][j]["infos1"][k]["info"],streets["streets"][j]["infos1"][k]["info_type"],streets["streets"][j]["infos1"][k]["orientation"],streets["streets"][j]["infos1"][k]["coordinates"],streets["streets"][j]["infos1"][k]["radius"])) # create linked list
 			k=k+1
 
 		flag = False	
@@ -38,9 +38,9 @@ def create_map():
 			k=0
 			for informations in streets["streets"][j]["infos2"]: # loop on street informations 2 
 				if k != 0:
-					exec("%s.insert(m.InfoNode('%s','%s','%s',%s))" % ((streets["streets"][j]["street_name"]+'_2'),streets["streets"][j]["infos2"][k]["info"],streets["streets"][j]["infos2"][k]["info_type"],streets["streets"][j]["infos2"][k]["orientation"],streets["streets"][j]["infos2"][k]["coordinates"])) # add elements to the list
+					exec("%s.insert(m.InfoNode('%s','%s','%s',%s,%s))" % ((streets["streets"][j]["street_name"]+'_2'),streets["streets"][j]["infos2"][k]["info"],streets["streets"][j]["infos2"][k]["info_type"],streets["streets"][j]["infos2"][k]["orientation"],streets["streets"][j]["infos2"][k]["coordinates"],streets["streets"][j]["infos2"][k]["radius"])) # add elements to the list
 				else:	
-					exec("%s = m.LinkedList(m.InfoNode('%s','%s','%s',%s))" % ((streets["streets"][j]["street_name"]+'_2'),streets["streets"][j]["infos2"][k]["info"],streets["streets"][j]["infos2"][k]["info_type"],streets["streets"][j]["infos2"][k]["orientation"],streets["streets"][j]["infos2"][k]["coordinates"])) # create linked list
+					exec("%s = m.LinkedList(m.InfoNode('%s','%s','%s',%s,%s))" % ((streets["streets"][j]["street_name"]+'_2'),streets["streets"][j]["infos2"][k]["info"],streets["streets"][j]["infos2"][k]["info_type"],streets["streets"][j]["infos2"][k]["orientation"],streets["streets"][j]["infos2"][k]["coordinates"],streets["streets"][j]["infos2"][k]["radius"])) # create linked list
 				k=k+1
 
 		if flag == True: # if there are 2 lists
