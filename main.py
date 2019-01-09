@@ -149,6 +149,7 @@ class Graph:
 	def connections_search(self,node,orientation,actual_position):
 		counter = 0
 		last_distance = 1000000000000
+		best_distance = 1000000000000
 		for connection in node.connections: # loop on connections (streets)
 			if connection[1] == orientation: # if it has the desired orientation
 				street = connection[0]
@@ -175,7 +176,7 @@ class Graph:
 				last_distance = distance	
 				counter = counter + 1
 		if counter == 0 or best_distance > 15:
-			print("There are no connections...")
+			# print("There are no connections...")
 			return None
 		else:
 			return return_connection
@@ -316,7 +317,8 @@ def select_info(graph,actual_position,orientation,actual_street=None):
 		closest_info = get_closest(actual_street.infos1,actual_position,orientation)
 		if closest_info == None:
 			print('There are no infos with the desired direction')
-			return None
+			print('NOT SURE... but returned head anyway')
+			return actual_street.infos1.head, actual_street
 		return get_2nd_closest(closest_info,actual_position), actual_street
 	else: # If there are two lists:
 		# get closest infos
@@ -391,16 +393,15 @@ if __name__ == '__main__':
 	dist_to_next_next = 10000000000
 	last_dist_to_next = 10000000000
 	last_dist_to_next_next = 10000000000
-	# flagfag=False
 	end_of_street = False
-	# debug=0
+	end_of_street_normal = False
+	wait_flag = False
+
 	# file = open('testfile1.txt','w') 
-	with open('gps_fiat_complete.csv', mode='r') as csv_file:
+	with open('test5_without_tips.csv', mode='r') as csv_file:
 		csv_reader = csv.DictReader(csv_file)
 		for row in csv_reader:
 			# start = time.time()
-			# debug=debug+1
-			# print(debug)
 			# GET DATA
 			actual_position=[]
 			actual_position.append(float(row["lat"]))
@@ -409,20 +410,21 @@ if __name__ == '__main__':
 			vx = float(row["vx"])
 			vy = float(row["vy"])
 			orientation = orientation_(vx,vy)
-
 			# orientation = row["orientation"]
 
+			i=i+1
+			# print(i)
 			# file.write(orientation + str(i) + '\n')
-			# if flagfag==True:
-			# 	print(orientation)
+
 			# FIRST LOCALIZATION
-			if i == 0:
+			if i == 1:
 				next_info, actual_street = select_info(graph,actual_position,orientation)
 				print('## THE VEHICLE IS AT:   ' + actual_street.street_name)
 				if next_info:
 					dist_to_next = coord_dist(actual_position,next_info.coordinates)
-					# last_orientation = next_info.orientation
-					i=1
+					last_orientation = next_info.orientation
+					if next_info.next_node:
+						dist_to_next_next = coord_dist(actual_position,next_info.next_node.coordinates)
 					if dist_to_next < next_info.radius:
 						if (next_info.info_type != 'sign' and next_info.info_type != 'road mark'):
 							print('( ' + next_info.info + '   --->   ' + next_info.info_type + ' )')
@@ -436,83 +438,127 @@ if __name__ == '__main__':
 								dist_to_next_next = coord_dist(actual_position,next_info.next_node.coordinates)
 				else:
 					print('No next info')
-				# i=1
-				# last_dist_to_next = dist_to_next
+				# i=i+1
 				continue
-			
-			i=i+1
-			last_dist_to_next = dist_to_next
-			last_dist_to_next_next = dist_to_next_next
-			if next_info: 
-				# print(i)
-				last_orientation = next_info.orientation
-				dist_to_next = coord_dist(actual_position,next_info.coordinates)
-				# print(dist_to_next)
-				# print('nexttt:::    ' + next_info.info)
-				if next_info.next_node:
-					dist_to_next_next = coord_dist(actual_position,next_info.next_node.coordinates)
+			# NOT FIRST TIME (MAIN)
 			else:
-				end_of_street = True
-				print('( end of street... )')
+				# i=i+1
+				last_dist_to_next = dist_to_next
+				last_dist_to_next_next = dist_to_next_next
+				if next_info: 
+					# print(i)
+					last_orientation = next_info.orientation
+					dist_to_next = coord_dist(actual_position,next_info.coordinates)
+					# if (i>65):
+						# print(i)
+						# print(dist_to_next)
+						# print(actual_position)
+						# print(next_info.info)
+					# print('nexttt:::    ' + next_info.info)
+					if next_info.next_node:
+						dist_to_next_next = coord_dist(actual_position,next_info.next_node.coordinates)
+				else:
+					end_of_street = True
+					# print('( end of street... )')
 
-			# IF IT'S TURNING BACK	
-			if orientation == opposite_orientation(last_orientation) and last_dist_to_next < dist_to_next:
-				if change_orientation > 2: # to ensure its not an error
-					print('( TURNED BACK )')
-					# flagfag=True
-					change_orientation = 0
-					next_info, actual_street = select_info(graph,actual_position,orientation)
+				# IF IT'S THE END OF A STREET
+				if (end_of_street == True and end_of_street_normal == False and wait_flag == False):
+					
+					if (len(actual_street.connections)==1):
+						end_of_street_normal = True
+					else: # In IST, a street cant have more than 2 connections... Make generic code for real maps where a street can have more than 2 connections.
+						next_street1 = actual_street.connections[0][0]
+						orient1 = actual_street.connections[0][1]
+						# print(orient1)
+						next_street2 = actual_street.connections[1][0]
+						orient2 = actual_street.connections[1][1]
+						# print(orient2)
+						# print(orientation)
+						if (orient1 != orientation and orient2 != orientation): # NORMAL STREET
+							# print('cacacacacaca0')
+							end_of_street_normal = True
+						elif (orient1 == orientation and orient2 != orientation): # NOT NORMAL STREET
+							check_info = select_info(graph,actual_position,orient1,next_street1)[0]
+							# print(check_info.info)
+							other_orientation = orient2
+							wait_flag = True
+							# print(other_orientation)
+							# print('cacacacacaca1')
+							continue
+						elif (orient1 != orientation and orient2 == orientation): # NOT NORMAL STREET
+							check_info = select_info(graph,actual_position,orient2,next_street2)[0]
+							other_orientation = orient1
+							wait_flag = True
+							# print('cacacacacaca2')
+							continue
+				elif (wait_flag == True): # NOT NORMAL STREET - waiting 
+					if (orientation == other_orientation): # the vehicle didnt go straight
+						wait_flag = False
+						end_of_street_normal = True
+					elif (coord_dist(actual_position,check_info.coordinates)<2 and orientation != other_orientation): # the vehicle went straight
+						wait_flag = False
+						end_of_street_normal = True
+					else:
+						continue
+
+				# 	for connect in actual_street.connections:
+				# 		dist = coord_dist(actual_position,connect.)
+				# 	procurar head das connections
+				# 	quando tiver mt perto de uma delas, se a orientaçao é a mesma, é essa
+				# 	continue
+				
+				# IF IT'S TURNING BACK	
+				if orientation == opposite_orientation(last_orientation) and last_dist_to_next < dist_to_next:
+					if change_orientation > 2: # to ensure its not an error
+						print('( TURNED BACK )')
+						# flagfag=True
+						change_orientation = 0
+						next_info = select_info(graph,actual_position,orientation,actual_street)[0]
+						# print(next_info.info)
+						if next_info:
+							last_orientation = next_info.orientation
+							dist_to_next = coord_dist(actual_position,next_info.coordinates)
+							if next_info.next_node:
+								dist_to_next_next = coord_dist(actual_position,next_info.next_node.coordinates)
+							continue
+						else:
+							end_of_street = True
+							print('( end of street... )')
+					else:
+						change_orientation = change_orientation + 1
+
+				# IF IT'S AN INTERSECTION OR THE END OF A NORMAL STREET (ITS CONNECTIONS HAVE DIFFERENT ORIENTATIONS)
+				if (next_info and next_info.info_type == 'intersection' and orientation != next_info.previous_node.orientation and dist_to_next < next_info.radius) or (end_of_street_normal == True):
+					# end_of_street = False
+					# end_of_street_normal = False
+					# actual_street = graph.connections_search(actual_street,orientation,actual_position)
+					# if actual_street is None: 
+					# 		print("NO CONNECTIONS")
+					# else:
+					# 	print('## NEW STREET:   ' + actual_street.street_name)
+					# 	# print(actual_position)
+					# next_info = select_info(graph,actual_position,orientation,actual_street)[0]
+					maybe_actual_street = graph.connections_search(actual_street,orientation,actual_position)
+					if maybe_actual_street is None:
+							# print("waiting...")
+							continue 
+					else:
+						end_of_street = False
+						end_of_street_normal = False
+						actual_street = maybe_actual_street
+						print('## NEW STREET:   ' + actual_street.street_name)
+						# print(actual_position)
+					next_info = select_info(graph,actual_position,orientation,actual_street)[0]
 					if next_info:
 						last_orientation = next_info.orientation
 						dist_to_next = coord_dist(actual_position,next_info.coordinates)
 						if next_info.next_node:
 							dist_to_next_next = coord_dist(actual_position,next_info.next_node.coordinates)
-						continue
-					# if next_info: 
-					# 	dist_to_next = coord_dist(actual_position,next_info.coordinates)
-					# 	last_dist_to_next = dist_to_next
-					# 	last_orientation = next_info.orientation
-					# 	# print(orientation)
-					# 	# print(str(actual_position))
-					# 	# print('just coiso:' + next_info.info)
-					# 	if next_info.next_node:
-					# 		last_dist_to_next_next = dist_to_next_next
-					# 		dist_to_next_next = coord_dist(actual_position,next_info.next_node.coordinates)
-					else:
-						end_of_street = True
-						print('( end of street... )')
-				else:
-					change_orientation = change_orientation + 1
-
-			# IF IT'S AN INTERSECTION OR THE END OF A STREET
-			if (next_info and next_info.info_type == 'intersection' and orientation != next_info.previous_node.orientation and dist_to_next < next_info.radius) or (end_of_street == True and orientation != last_orientation):
-				end_of_street = False
-				actual_street = graph.connections_search(actual_street,orientation,actual_position)
-				if actual_street is None: 
-						print("NO CONNECTIONS")
-				else:
-					print('## NEW STREET:   ' + actual_street.street_name)
-				next_info = select_info(graph,actual_position,orientation,actual_street)[0]
-				if next_info:
-					last_orientation = next_info.orientation
-					dist_to_next = coord_dist(actual_position,next_info.coordinates)
-					if next_info.next_node:
-						dist_to_next_next = coord_dist(actual_position,next_info.next_node.coordinates)
-					continue
-				# if next_info.next_node:
-				# 	last_dist_to_next_next = dist_to_next_next
-				# 	dist_to_next_next = coord_dist(actual_position,next_info.next_node.coordinates)
-				# dist_to_next = coord_dist(actual_position,next_info.coordinates)
-				# last_dist_to_next = dist_to_next
-				# last_orientation = next_info.orientation
-
-			# IF ITS WAITING FOR AN INFO TO BE DETECTED, BUT IT IS BEHIND
-			if dist_to_next > last_dist_to_next and dist_to_next_next < last_dist_to_next_next and end_of_street == False and orientation == last_orientation:
-				# last_i = i
-				if info_behind > 2: # to ensure its not a gps error
-					last_i = -1
-					info_behind = 0
-					print('( ignored: ' + next_info.info + ' )')
+						# continue
+				# ELIF THE CAR DOESNT TURN ON INTERSECTION
+				elif (next_info and next_info.info_type == 'intersection' and coord_dist(next_info.coordinates,next_info.next_node.coordinates) > dist_to_next_next and orientation == next_info.previous_node.orientation):
+				# elif (next_info and next_info.info_type == 'intersection' and dist_to_next_next < 0.5):
+					print('( ' + next_info.info + ' )')
 					next_info = next_info.next_node
 					if next_info:
 						last_orientation = next_info.orientation
@@ -522,54 +568,52 @@ if __name__ == '__main__':
 						continue
 					else:
 						end_of_street = True
+						print('( end of street... ????)')
+
+				# IF ITS WAITING FOR AN INFO TO BE DETECTED, BUT IT IS BEHIND
+				if dist_to_next > last_dist_to_next and dist_to_next_next < last_dist_to_next_next and end_of_street == False and orientation == last_orientation:
+					# last_i = i
+					if info_behind > 2: # to ensure its not a gps error
+						last_i = -1
+						info_behind = 0
+						print('( ignored: ' + next_info.info + ' )')
+						next_info = next_info.next_node
+						if next_info:
+							last_orientation = next_info.orientation
+							dist_to_next = coord_dist(actual_position,next_info.coordinates)
+							if next_info.next_node:
+								dist_to_next_next = coord_dist(actual_position,next_info.next_node.coordinates)
+							continue
+						else:
+							end_of_street = True
+							print('( end of street... )')
+					elif((info_behind == 0) or ((i-last_i) == 1)): # to ensure it is sequentially
+						last_i = i
+						info_behind = info_behind + 1
+
+				# GET NEXT INFO WHILE ON THE SAME STREET
+				if (next_info and dist_to_next < next_info.radius and next_info.info_type != 'intersection'):
+					if (next_info.info_type != 'sign' and next_info.info_type != 'road mark'):
+						print('( ' + next_info.info + '   --->   ' + next_info.info_type + ' )')
+					else:
+						print('                                                    ' + next_info.info + '   --->   ' + next_info.info_type)
+					next_info = next_info.next_node
+					# print(next_info.info + '.......')
+					if next_info:
+						last_orientation = next_info.orientation
+						dist_to_next = coord_dist(actual_position,next_info.coordinates)
+						if next_info.next_node:
+							dist_to_next_next = coord_dist(actual_position,next_info.next_node.coordinates)
+						continue
+					else:
+						end_of_street = True
 						print('( end of street... )')
-				elif((info_behind == 0) or ((i-last_i) == 1)): # to ensure it is sequentially
-					last_i = i
-					info_behind = info_behind + 1
-				# else:
-				# 	info_behind = info_behind +1
-				
 
-			# IF THE CAR DOESNT TURN ON INTERSECTION
-			if (next_info and next_info.info_type == 'intersection' and coord_dist(next_info.coordinates,next_info.next_node.coordinates) > dist_to_next_next):
-				print('( ' + next_info.info + ' )')
-				next_info = next_info.next_node
-				if next_info:
-					last_orientation = next_info.orientation
-					dist_to_next = coord_dist(actual_position,next_info.coordinates)
-					if next_info.next_node:
-						dist_to_next_next = coord_dist(actual_position,next_info.next_node.coordinates)
-					continue
-				else:
-					end_of_street = True
-					print('( end of street... )')
-
-			# GET NEXT INFO WHILE ON THE SAME STREET
-			if (next_info and dist_to_next < next_info.radius and next_info.info_type != 'intersection'):
-				if (next_info.info_type != 'sign' and next_info.info_type != 'road mark'):
-					print('( ' + next_info.info + '   --->   ' + next_info.info_type + ' )')
-				else:
-					print('                                                    ' + next_info.info + '   --->   ' + next_info.info_type)
-				next_info = next_info.next_node
-				#print(next_info.orientation + '.......')
-				if next_info:
-					last_orientation = next_info.orientation
-					dist_to_next = coord_dist(actual_position,next_info.coordinates)
-					if next_info.next_node:
-						dist_to_next_next = coord_dist(actual_position,next_info.next_node.coordinates)
-					continue
-				else:
-					end_of_street = True
-					print('( end of street... )')
-	# file.close()
 			# end = time.time()
 			# pause = 0.05 -(end-start)
 			# if pause < 0:
 			# 	print(pause)
 			# time.sleep(pause)
-	 
 
 
-	# cenas = select_info(graph,[38.737950, -9.139130],'South')
-	# if cenas: 
-	# 	print(cenas.info)
+# ...tipps.csv contains lines 1039-1044 which are outliers, but ...tips.csv doesnt

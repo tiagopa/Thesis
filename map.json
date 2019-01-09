@@ -156,7 +156,7 @@
                 "info" : "Right intersection",
                 "info_type" : "intersection",
                 "orientation" : "South",
-                "coordinates" : [38.737317, -9.139107],
+                "coordinates" : [38.737208, -9.139096],
                 "radius" : 10,
                 "missed" : null
             },
@@ -522,7 +522,7 @@
                 "info" : "stop",
                 "info_type" : "sign",
                 "orientation" : "East",
-                "coordinates" : [38.736201, -9.139005],
+                "coordinates" : [38.736244, -9.139001],
                 "radius" : 10,
                 "missed" : 0
             },
@@ -530,7 +530,7 @@
                 "info" : "start",
                 "info_type" : "point",
                 "orientation" : "East",
-                "coordinates" : [38.736214, -9.139597],
+                "coordinates" : [38.736228, -9.139439],
                 "radius" : 10,
                 "missed" : 0
             }
@@ -565,7 +565,7 @@
                 "info_type" : "sign",
                 "orientation" : "South",
                 "coordinates" : [38.736143, -9.139583],
-                "radius" : 10,
+                "radius" : 25,
                 "missed" : 0
             },
             {
@@ -727,6 +727,10 @@
             {
                 "street" : "IST3",
                 "orientation" : "East"
+            },
+            {
+                "street" : "IST6",
+                "orientation" : "West"
             }
         ],
         "polygon_coord" : [
@@ -737,11 +741,19 @@
         ],
         "infos1" : [
             {
+                "info" : "end",
+                "info_type" : "point",
+                "orientation" : "East",
+                "coordinates" : [38.736228, -9.139439],
+                "radius" : 3,
+                "missed" : 0
+            },
+            {
                 "info" : "prohibit",
                 "info_type" : "sign",
                 "orientation" : "North",
                 "coordinates" : [38.736279, -9.139596],
-                "radius" : 10,
+                "radius" : 13,
                 "missed" : 0
             },
             {
@@ -761,7 +773,7 @@
                 "missed" : 0
             },
             {
-                "info" : "start",
+                "info" : "change direction",
                 "info_type" : "point",
                 "orientation" : "North",
                 "coordinates" : [38.735786, -9.139600],
@@ -780,7 +792,7 @@
                 "info" : "start",
                 "info_type" : "point",
                 "orientation" : "South",
-                "coordinates" : [38.736166, -9.139761],
+                "coordinates" : [38.736040, -9.139752],
                 "radius" : 10,
                 "missed" : 0
             }
