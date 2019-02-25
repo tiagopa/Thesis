@@ -156,7 +156,7 @@
                 "info" : "Right intersection",
                 "info_type" : "intersection",
                 "orientation" : "South",
-                "coordinates" : [38.737208, -9.139096],
+                "coordinates" : [38.737205, -9.139095],
                 "radius" : 10,
                 "missed" : null
             },
@@ -213,6 +213,14 @@
                 "info_type" : "point",
                 "orientation" : "West",
                 "coordinates" : [38.737948, -9.138960],
+                "radius" : 10,
+                "missed" : 0
+            },
+            {
+                "info" : "point in between",
+                "info_type" : "point",
+                "orientation" : "West",
+                "coordinates" : [38.737979, -9.138657],
                 "radius" : 10,
                 "missed" : 0
             },
@@ -279,6 +287,14 @@
                 "info_type" : "sign",
                 "orientation" : "East",
                 "coordinates" : [38.737882, -9.138137],
+                "radius" : 10,
+                "missed" : 0
+            },
+            {
+                "info" : "point in between",
+                "info_type" : "point",
+                "orientation" : "East",
+                "coordinates" : [38.737979, -9.138657],
                 "radius" : 10,
                 "missed" : 0
             },
@@ -464,6 +480,14 @@
         ],
         "infos1" : [
             {
+                "info" : "end",
+                "info_type" : "point",
+                "orientation" : "West",
+                "coordinates" : [38.737236, -9.139674],
+                "radius" : 3,
+                "missed" : 0
+            },
+            {
                 "info" : "handicapped parking",
                 "info_type" : "sign",
                 "orientation" : "West",
@@ -480,19 +504,19 @@
                 "missed" : 0
             },
             {
-                "info" : "crosswalk",
-                "info_type" : "sign",
+                "info" : "point near intersection",
+                "info_type" : "point",
                 "orientation" : "West",
-                "coordinates" : [38.737208, -9.139096],
+                "coordinates" : [38.737255, -9.139418],
                 "radius" : 10,
                 "missed" : 0
             },
             {
-                "info" : "crosswalk",
-                "info_type" : "sign",
+                "info" : "start",
+                "info_type" : "point",
                 "orientation" : "West",
-                "coordinates" : [38.737317, -9.139107],
-                "radius" : 10,
+                "coordinates" : [38.737263, -9.139280],
+                "radius" : 2,
                 "missed" : 0
             }
         ],
